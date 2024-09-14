@@ -1,7 +1,7 @@
 #include <freeglut.h>
 void iniciar()
 {
-	glClearColor(0, 0, 1, 1);//0 = rojo 0= verde , 1=amarillo , 1=alpha
+	glClearColor(0.5, 0.3, 0.6, 0.8);//0 = rojo 0= verde , 1=amarillo , 1=alpha
 	glPointSize(5);
 	glColor3i(1, 0, 0);
 	glOrtho(800, 0, 600, 0, -1, 1);
@@ -25,7 +25,7 @@ int main(int argc, char* args[])
 	//buffer es un espacio en memoria
 	glutInitWindowSize(800, 600);//aqui le damos el tamaño de la pantalla
 	glutInitWindowPosition(50, 50);//aqui especificamos la posicion de la pantalla
-	glutCreateWindow("Nombre de la ventana Steven XDDDDDDDDDDDDDDDDDDDDDDD");//Con esto le damos el nombre a la ventana creada
+	glutCreateWindow("Nombre de la ventana Steven XD");//Con esto le damos el nombre a la ventana creada
 	glutDisplayFunc(dibujar);
 	iniciar();
 	glutMainLoop(); // esto es para que siga actualizando la pantalla mientras corre , para que no se cierre
