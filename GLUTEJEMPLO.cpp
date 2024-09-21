@@ -28,6 +28,8 @@ void dibujar()
 
 }
 
+
+
 int main(int argc, char* args[]) 
 {
 	glutInit(&argc, args);//se utiliza para inicializar la libreria glut
