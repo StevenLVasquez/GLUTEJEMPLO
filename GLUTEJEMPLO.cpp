@@ -1,22 +1,32 @@
 #include <freeglut.h>
 void iniciar()
 {
-	glClearColor(1.0, 1.0, 1.0, 0.8);//0 = rojo 0= verde , 1=amarillo , 1=alpha
-	glPointSize(150);
-	//glColor3i(1, 0, 0);
-	glOrtho(800, 0, 600, 0, -1, 1);
+	glClearColor(1, 0, 0, 0); //Rojo,verde,azul, alfa
+	glLineWidth(3.f);
+	// glPointSize(150);/// con esto vamos a crear los puntos
+	// glColor3i(1, 0, 0); / //para indicar que el color del punto va a ser rojo
+		glOrtho(800, 0, 600, 0, -1, 1); // esta es la orientacion de la camara
+
+
 }
 
 void dibujar()
 {
-	glClear(GL_COLOR_BUFFER_BIT);
-	glBegin(GL_POINTS);
-	glColor3f(1, 1, 0);
-	glVertex2d(400, 300);
-	glEnd();
-	glFlush();
-}
+	glClear(GL_COLOR_BUFFER_BIT); //PARA IR LIMPIANDO EL BUFFER
+	glBegin(GL_LINES); // CON ESTO LE ESTAMOS DICIENDO QUE VAMOS A DIBUJAR PUNTOS
+	glColor3f(1, 1, 0); //aqui se cambia el color del punto
+	glVertex2i(100, 100); // Primer punto (x1, y1)
+	glVertex2i(400, 300);
 
+	glColor3f(0, 1, 1); //aqui se cambia el color del punto
+	glVertex2i(600, 400); // Primer punto (x1, y1)
+	glVertex2i(100, 200);// Segundo punto (x2, y2)
+	// glVertex2d(400, 300);///Aqui le estamos diciendo que vamos a usar un entorno 2d y dibujando los puntos.
+	glEnd();
+	glFlush(); // aqui forzamos que lo que esta arriba se tumbe
+
+
+}
 
 int main(int argc, char* args[]) 
 {
