@@ -1,9 +1,9 @@
 #include <freeglut.h>
 void iniciar()
 {
-	glClearColor(0.5, 0.3, 0.6, 0.8);//0 = rojo 0= verde , 1=amarillo , 1=alpha
-	glPointSize(5);
-	glColor3i(1, 0, 0);
+	glClearColor(1.0, 1.0, 1.0, 0.8);//0 = rojo 0= verde , 1=amarillo , 1=alpha
+	glPointSize(150);
+	//glColor3i(1, 0, 0);
 	glOrtho(800, 0, 600, 0, -1, 1);
 }
 
@@ -11,7 +11,8 @@ void dibujar()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
 	glBegin(GL_POINTS);
-	glVertex2d(20, 20);
+	glColor3f(1, 1, 0);
+	glVertex2d(400, 300);
 	glEnd();
 	glFlush();
 }
