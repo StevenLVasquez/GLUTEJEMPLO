@@ -8,7 +8,7 @@ void iniciar()
 		glOrtho(800, 0, 600, 0, -1, 1); // esta es la orientacion de la camara
 
 
-}
+}//r
 
 void dibujar()
 {
