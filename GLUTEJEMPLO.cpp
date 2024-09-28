@@ -1,5 +1,5 @@
 #include <freeglut.h>
-void iniciar()
+/*void iniciar()
 {
 	glClearColor(1, 0, 0, 0); //Rojo,verde,azul, alfa
 	glLineWidth(3.f);
@@ -10,7 +10,9 @@ void iniciar()
 
 }//r
 
-void dibujar()
+
+*/
+/*void dibujar()
 {
 	glClear(GL_COLOR_BUFFER_BIT); //PARA IR LIMPIANDO EL BUFFER
 	glBegin(GL_LINES); // CON ESTO LE ESTAMOS DICIENDO QUE VAMOS A DIBUJAR PUNTOS
@@ -27,10 +29,8 @@ void dibujar()
 
 
 }
-
-
-
-int main(int argc, char* args[]) 
+*/
+/*int main(int argc, char* args[]) 
 {
 	glutInit(&argc, args);//se utiliza para inicializar la libreria glut
 	glutInitDisplayMode(GLUT_RGB | GLUT_SINGLE);
@@ -44,5 +44,45 @@ int main(int argc, char* args[])
 	glutMainLoop(); // esto es para que siga actualizando la pantalla mientras corre , para que no se cierre
 	return 0;
 
+}*/
+void iniciar() {
+	glClearColor(0, 0, 1, 0);
+	//glLineWidth(3.f);
+	glPointSize(50);
+	//glColor3i(1, 0, 0);
+	glOrtho(800, 0, 600, 0, -1, 1);
 }
+
+
+void dibujar() {
+	glClear(GL_COLOR_BUFFER_BIT); 
+	glBegin(GL_LINE_STRIP); //el strip se utiliza para unir los puntos automaticamente
+	glColor3f(1.f, 0, 0); 
+	glVertex2i(0, 0); 
+	glVertex2i(500, 200);
+	glVertex2i(800, 75);
+
+
+
+	glEnd();
+	glFlush();
+}
+
+
+int main(int argc, char* args[])
+{
+	glutInit(&argc, args);
+	glutInitDisplayMode(GLUT_RGB | GLUT_SINGLE);
+	glutInitWindowSize(800, 600);
+	glutInitWindowPosition(50, 50);
+	glutCreateWindow("Nombre de la ventana Steven XD");
+	glutDisplayFunc(dibujar);
+	iniciar();
+	glutMainLoop();
+	return 0;
+
+}
+
+
+
 
