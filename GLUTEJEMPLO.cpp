@@ -127,8 +127,7 @@ int main(int argc, char* args[])
 }*/
 
 /*.....................................................*/
-
-void iniciar() {
+/*void iniciar() {
 	glClearColor(0, 0, 1, 0);
 	//glLineWidth(3.f);
 	glPointSize(50);
@@ -139,11 +138,14 @@ void iniciar() {
 
 void dibujar() {
 	glClear(GL_COLOR_BUFFER_BIT);
-	glBegin(GL_LINE_LOOP); //el strip se utiliza para unir los puntos automaticamente
+	glBegin(GL_POLYGON); //el strip se utiliza para unir los puntos automaticamente
 	glColor3f(1.f, 0, 0);
-	glVertex2i(0, 0);
-	glVertex2i(500, 200);
-	glVertex2i(800, 75);
+	glVertex2i(0, 0);   
+	glVertex2i(50, 0);   
+	glVertex2i(50, 50);  
+	glVertex2i(0, 50);   
+
+
 	//glVertex2i(600, 78);
 
 
@@ -167,6 +169,118 @@ int main(int argc, char* args[])
 	return 0;
 
 }
+*/
+
+/*.......................................................*/
+/*void iniciar() {
+	glClearColor(0, 0, 1, 0);
+	//glLineWidth(3.f);
+	glPointSize(50);
+	//glColor3i(1, 0, 0);
+	glOrtho(800, 0, 600, 0, -1, 1);
+}
+
+
+void dibujar() {
+	glClear(GL_COLOR_BUFFER_BIT);
+	glBegin(GL_TRIANGLES); //el strip se utiliza para unir los puntos automaticamente
+	glColor3f(1.f, 0, 0);
+
+	glVertex2i(50, 50);
+	glVertex2i(100, 50);
+	glVertex2i(100, 100); //aqui dibujamos un cuadrado
+	
+	glVertex2i(50, 50);
+	glVertex2i(50, 100);
+	glVertex2i(100, 100);
+
+
+
+
+
+
+
+	//glVertex2i(600, 78);
+
+
+
+
+	glEnd();
+	glFlush();
+}
+
+
+int main(int argc, char* args[])
+{
+	glutInit(&argc, args);
+	glutInitDisplayMode(GLUT_RGB | GLUT_SINGLE);
+	glutInitWindowSize(800, 600);
+	glutInitWindowPosition(50, 50);
+	glutCreateWindow("Nombre de la ventana Steven XD");
+	glutDisplayFunc(dibujar);
+	iniciar();
+	glutMainLoop();
+	return 0;
+
+}
+*/
+
+/*.........................................................*/
+
+void iniciar() {
+	glClearColor(0, 0, 1, 0);
+	//glLineWidth(3.f);
+	glPointSize(50);
+	//glColor3i(1, 0, 0);
+	glOrtho(800, 0, 600, 0, -1, 1);
+}
+
+
+void dibujar() {
+	glClear(GL_COLOR_BUFFER_BIT);
+	glRotatef(45.0f, 0.0f, 0.0f, 1.0f);
+	glBegin(GL_TRIANGLES); //el strip se utiliza para unir los puntos automaticamente
+	glColor3f(1.f, 0, 0);
+
+	glVertex2i(100, 100);
+	glVertex2i(150, 100);
+	glVertex2i(150, 150); 
+
+	glVertex2i(100, 100);
+	glVertex2i(100, 150);
+	glVertex2i(150, 150);
+
+
+
+
+
+
+
+	//glVertex2i(600, 78);
+
+
+
+
+	glEnd();
+	glFlush();
+}
+
+
+int main(int argc, char* args[])
+{
+	glutInit(&argc, args);
+	glutInitDisplayMode(GLUT_RGB | GLUT_SINGLE);
+	glutInitWindowSize(800, 600);
+	glutInitWindowPosition(50, 50);
+	glutCreateWindow("Nombre de la ventana Steven XD");
+	glutDisplayFunc(dibujar);
+	iniciar();
+	glutMainLoop();
+	return 0;
+
+}
+
+
 
 
 
